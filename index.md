@@ -1,32 +1,17 @@
-## Xiyao Wang
+# Xiyao Wang 王玺尧
 
-You can use the [editor on GitHub](https://github.com/si0wang/si0wang.github.io/edit/main/index.md) to maintain and preview the content for your website in Markdown files.
+Hi, this is Xiyao Wang. 
+I'm a research assistant at [Institute of Automation, Chinese Academy of Sciences](http://english.ia.cas.cn/) working with Prof. Junge Zhang. 
+Currently, I'm a remote intern student at [University of Maryland, College Park](https://www.umd.edu/) working with Prof. [Furong Huang](http://furong-huang.com/).
+I'm going to continue my study as a Ph.D. student in [Swanson School of Engineering](https://www.engineering.pitt.edu/) at [University of Pittsburgh](https://www.pitt.edu/) advised by Prof.[Heng Huang](https://sites.pitt.edu/~heh45/) in Spring 2022.
+My research
+Before that, I received my Bachelor's degree from [University of Electronic Science and Technology of China](https://en.uestc.edu.cn/) in 2019.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Education
 
-### Markdown
+## Publications
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
 ### Jekyll Themes
 
