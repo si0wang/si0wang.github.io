@@ -1,4 +1,4 @@
-# Xiyao Wang 王玺尧
+# Xiyao Wang
 
 Hi, this is Xiyao Wang. 
 I'm a research assistant at [Institute of Automation, Chinese Academy of Sciences](http://english.ia.cas.cn/) working with Prof. Junge Zhang. 
