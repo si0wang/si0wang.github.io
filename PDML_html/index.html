@@ -99,15 +99,15 @@
   <div class="container">
     <h3 id="Motivation" style="padding-top: 70px; margin-top: -80px; ">Mismatch between model learning and model rollouts</h3><hr>
     <div style="text-align: justify">
-    <h4>State-action visitation distribution shift during policy learning</h4>
+    <b4>State-action visitation distribution shift during policy learning</b4>
     The state-action visitation distribution of policies under different environment steps is very different due to policy learning. Leading to a huge state-action visitation distribution shift in the replay buffer.<hr>
-    <b> HalfCheetah </b><hr>:
-    <img class="img-responsive img-rounded" src="./Figures/policy_distribution_shift_halfcheetah.png" width="80%" height="80%" style="width:100%; height:100%" alt="">
-    <b> Hopper </b><hr>:
-    <img class="img-responsive img-rounded" src="./Figures/policy_distribution_shift_hopper.png" width="80%" height="80%" style="width:100%; height:100%" alt="">
-    <h4>Prediction error curves of MBPO</h4><hr>:
+    <b> HalfCheetah </b><br>:
+    <img class="img-responsive img-rounded" src="./Figures/policy_distribution_shift_halfcheetah.png" style="width:80%; height:80%" alt="">
+    <b> Hopper </b><br>:
+    <img class="img-responsive img-rounded" src="./Figures/policy_distribution_shift_hopper.png" style="width:80%; height:80%" alt="">
+    <h4>Prediction error curves of MBPO</h4><br>:
     Overall error means the model prediction error for all historical policies, and current error is the model prediction error for the current policy. We observe that there is a gap between the overall error and the current error. This means although the agent can learn a dynamics model which is good enough for all samples obtained by historical poli- cies, this is at the expense of the prediction accuracy for the samples induced by current policy.
-    <img class="img-responsive img-rounded" src="./Figures/error_curve.png" width="50%" height="50%" style="width:100%; height:100%" alt="">
+    <img class="img-responsive img-rounded" src="./Figures/error_curve.png" style="width:50%; height:50%" alt="">
     </div>
   </div><br><br>
 
