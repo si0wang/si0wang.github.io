@@ -111,7 +111,7 @@ img.center {
     <img class="center" src="./Figures/policy_distribution_shift_halfcheetah.png" style="width:80%; height:80%"  alt=""><br>
     <b> Hopper: </b><br>
     <img class="center" src="./Figures/policy_distribution_shift_hopper.png" style="width:80%; height:80%" alt=""><br>
-    <h4>Prediction error curves of MBPO:</h4><br>
+    <h4>Prediction error curves of MBPO</h4>
     Overall error means the model prediction error for all historical policies, and current error is the model prediction error for the current policy. We observe that there is a gap between the overall error and the current error. This means although the agent can learn a dynamics model which is good enough for all samples obtained by historical policies, this is at the expense of the prediction accuracy for the samples induced by current policy.<br>
     <img class="center" src="./Figures/error_curve.png" style="width:50%; height:50%" alt="">
     </div>
@@ -123,26 +123,42 @@ img.center {
     <div style="text-align: justify">
       Our main idea is to adjust the policy mixture distribution that continuously adapts to the current policy.<br>
       <b> Weights designed for historical policies: </b><br>
-      <img class="img-responsive img-rounded" src="./Figures/historical_policy_weight.png" style="width:60%; height:60%" alt=""><br>
+      <img class="center" src="./Figures/historical_policy_weight.png" style="width:60%; height:60%" alt=""><br>
       <b> Weights designed for current policy: </b><br>
-      <img class="img-responsive img-rounded" src="./Figures/current_policy_weight.png" style="width:55%; height:55%" alt=""><br>
+      <img class="center" src="./Figures/current_policy_weight.png" style="width:55%; height:55%" alt=""><br>
       <b> Estimation of the policy distribution shift: </b><br>
-      <img class="img-responsive img-rounded" src="./Figures/estimation_distribution_shift.png" style="width:65%; height:65%" alt=""><br>
+      <img class="center" src="./Figures/estimation_distribution_shift.png" style="width:65%; height:65%" alt=""><br>
+    </div>
+  </div><br><br>
+
+  <div class="container">
+    <h3 id="Results" style="padding-top: 70px; margin-top: -80px; ">Experiment results</h3><hr>
+    <div style="text-align: justify">
+      <h4>MuJoCo experiment</h4>
+      We combine PDML with the current most popular MBRL method MBPO and compare our method (PDML-MBPO) with several previous state-of-the-art baselines including MBPO, AMPO, VaGraM, SAC, and REDQ. PDML-MBPO outperforms all existing state-of-the-art methods, including model-based and model-free, in sample efficiency in five environments, and achieves competitive sample efficiency in Ant.
+      In addition, PDML-MBPO obtains significantly better asymptotic performance compared to other state-of- the-art model-based methods. It is worth noting that the asymptotic performance of PDML-MBPO is very close to SAC in four environments (Hopper, Walker2d, Humanoid, and Pusher) and is even better than SAC occasionally. Furthermore, our method achieves impressive improvement in the most complex environment Humanoid.<br>
+      <img class="center" src="./Figures/MUJOCO.png" style="width:80%; height:80%" alt=""><br>
+      <h4>Prediction errors compared with global dynamics model (MBPO)</h4>
+      We evaluate the one-step model prediction error for the current policy on Hopper, HalfCheetah, and Walker2d and compare the multi-step model rollouts compounding error of the policy-adapted model and the original dynamics model on Hopper.<br>
+      <img class="center" src="./Figures/step_error.png" style="width:80%; height:80%" alt=""><br>
+      <h4>Compare with Model-free Experience Replay Methods</h4>
+      Traditional model-free prioritized replay buffer methods don’t work in more complex environments (such as Walker2d), while our method achieves the best improvement!<br>
+      <img class="center" src="./Figures/per.png" style="width:80%; height:80%" alt=""><br>
     </div>
   </div><br><br>
 
   <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
-    <h4 class="title">BibTeX</h4>
+    <h4 class="title">Cite This Paper</h4>
     <pre><code>
        @inproceedings{wang2023live,
-      title={Live in the moment: Learning dynamics model adapted to evolving policy},
-      author={Wang, Xiyao and Wongkamjan, Wichayaporn and Jia, Ruonan and Huang, Furong},
-      booktitle={International Conference on Machine Learning},
-      pages={36470--36493},
-      year={2023},
-      organization={PMLR}
-    }
+          title={Live in the moment: Learning dynamics model adapted to evolving policy},
+          author={Wang, Xiyao and Wongkamjan, Wichayaporn and Jia, Ruonan and Huang, Furong},
+          booktitle={International Conference on Machine Learning},
+          pages={36470--36493},
+          year={2023},
+          organization={PMLR}
+        }
 </code></pre>
   </div>
 </section>
