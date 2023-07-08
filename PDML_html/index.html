@@ -106,7 +106,7 @@ img.center {
     <h3 id="Motivation" style="padding-top: 70px; margin-top: -80px; ">Mismatch between model learning and model rollouts</h3><hr>
     <div style="text-align: justify">
     <h4>State-action visitation distribution shift during policy learning</h4>
-    The state-action visitation distribution of policies under different environment steps is very different due to policy learning. Leading to a huge state-action visitation distribution shift in the replay buffer.<hr>
+    The state-action visitation distribution of policies under different environment steps is very different due to policy learning. Leading to a huge state-action visitation distribution shift in the replay buffer.<br>
     <b> HalfCheetah: </b><br>
     <img class="center" src="./Figures/policy_distribution_shift_halfcheetah.png" style="width:80%; height:80%"  alt=""><br>
     <b> Hopper: </b><br>
@@ -119,16 +119,15 @@ img.center {
 
   <!-- Experiments: show our experimental results -->
   <div class="container">
-    <h3 id="Method" style="padding-top: 70px; margin-top: -80px; ">Method</h3><hr>
+    <h3 id="Method" style="padding-top: 70px; margin-top: -80px; ">Method: Policy-adapted Dynamics Model Learning</h3><hr>
     <div style="text-align: justify">
-      <h4>Policy-adapted Dynamics Model Learning</h4><hr>
-      Our main idea is to adjust the policy mixture distribution that continuously adapts to the current policy.
-      <b> Weights designed for historical policies</b>:
-      <img class="img-responsive img-rounded" src="./Figures/historical_policy_weight.png" style="width:80%; height:80%" alt=""></center>
-      <b> Weights designed for current policy</b>:
-      <img class="img-responsive img-rounded" src="./Figures/current_policy_weight.png" style="width:80%; height:80%" alt=""></center>
-      <b> Estimation of the policy distribution shift</b>:
-      <img class="img-responsive img-rounded" src="./Figures/estimation_distribution_shift.png" style="width:80%; height:80%" alt=""></center>
+      Our main idea is to adjust the policy mixture distribution that continuously adapts to the current policy.<br>
+      <b> Weights designed for historical policies: </b>
+      <img class="img-responsive img-rounded" src="./Figures/historical_policy_weight.png" style="width:30%; height:30%" alt=""><br>
+      <b> Weights designed for current policy: </b>
+      <img class="img-responsive img-rounded" src="./Figures/current_policy_weight.png" style="width:30%; height:30%" alt=""><br>
+      <b> Estimation of the policy distribution shift: </b>
+      <img class="img-responsive img-rounded" src="./Figures/estimation_distribution_shift.png" style="width:30%; height:30%" alt=""><br>
     </div>
   </div><br><br>
 
