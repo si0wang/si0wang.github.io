@@ -28,7 +28,13 @@
       gtag('js', new Date());
       gtag('config', 'UA-124898353-1');
   </script>
-
+<style>
+img.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+</style>
 
 </head>
 
@@ -106,7 +112,7 @@
     <b> Hopper: </b><br>
     <img class="center" src="./Figures/policy_distribution_shift_hopper.png" style="width:80%; height:80%" alt=""><br>
     <h4>Prediction error curves of MBPO:</h4><br>
-    Overall error means the model prediction error for all historical policies, and current error is the model prediction error for the current policy. We observe that there is a gap between the overall error and the current error. This means although the agent can learn a dynamics model which is good enough for all samples obtained by historical poli- cies, this is at the expense of the prediction accuracy for the samples induced by current policy.<br>
+    Overall error means the model prediction error for all historical policies, and current error is the model prediction error for the current policy. We observe that there is a gap between the overall error and the current error. This means although the agent can learn a dynamics model which is good enough for all samples obtained by historical policies, this is at the expense of the prediction accuracy for the samples induced by current policy.<br>
     <img class="center" src="./Figures/error_curve.png" style="width:50%; height:50%" alt="">
     </div>
   </div><br><br>
