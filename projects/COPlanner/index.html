@@ -57,19 +57,14 @@
 </div>
 <div class="content">
 	<div class="hr"></div>
-	<div class="figure" style="height: 320px; background-image: url(Figures/exp_total_new.png);"></div>
-	<div class="figure" style="height: 320px; background-image: url(Figures/exp_total_new.png);"></div>
+	<div class="figure" style="height: 320px; background-image: url(Figures/framework_v3.png);"></div>
 	<div style="margin: auto; margin-top: -24px;">
-		<p>
-			<span class="bold red">Overview.</span> compares favorably to existing model-free and model-based methods across <span class="bold">104</span> continuous control tasks spanning multiple domains, with a <span class="italic">single</span> set of hyperparameters (<span class="italic">right</span>). We further demonstrate the scalability of TD-MPC<span class="bold">2</span> by training a single 317M parameter agent to perform <span class="bold">80</span> tasks across multiple domains, embodiments, and action spaces (<span class="italic">left</span>).
-		</p>
 	</div>
 	<div class="hr"></div>
 	<div>
 		<h2>Abstract</h2>
 		<p class="abstract">
-			<a href="https://nicklashansen.github.io/td-mpc">TD-MPC</a> is a model-based reinforcement learning (MBRL) algorithm that performs local trajectory optimization in the latent space of a learned implicit (decoder-free) world model. In this work, we present TD-MPC<span class="bold">2</span>: a series of improvements upon the TD-MPC algorithm. We demonstrate that TD-MPC<span class="bold">2</span> improves significantly over baselines across <span class="bold">104</span> online RL tasks spanning 4 diverse task domains, achieving consistently strong results without any hyperparameter tuning. We further show that agent capabilities increase with model and data size, and successfully train a single agent to perform <span class="bold">80</span> tasks across multiple task domains, embodiments, and action spaces. We conclude with an account of lessons, opportunities, and risks associated with large TD-MPC<span class="bold">2</span> agents.
-		</p>
+Dyna-style model-based reinforcement learning contains two phases: model rollouts to generate sample for policy learning and real environment exploration using current policy for dynamics model learning. However, due to the complex real-world environment, it is inevitable to learn an imperfect dynamics model with model prediction error, which can further mislead policy learning and result in sub-optimal solutions. In this paper, we propose COPlanner, a planning-driven framework for model-based methods to address the inaccurately learned dynamics model problem with conservative model rollouts and optimistic environment exploration. COPlanner leverages an uncertainty-aware policy-guided model predictive control (UP-MPC) component to plan for multi-step uncertainty estimation. This estimated uncertainty then serves as a penalty during model rollouts and as a bonus during real environment exploration  respectively, to choose actions. Consequently, COPlanner can avoid model uncertain regions through conservative model rollouts,  thereby alleviating the influence of model error. Simultaneously, it explores high-reward model uncertain regions to reduce model error actively through optimistic real environment exploration. COPlanner is a plug-and-play framework that can be applied to any dyna-style model-based methods. Experimental results on a series of proprioceptive and visual continuous control tasks demonstrate that both sample efficiency and asymptotic performance of strong model-based methods are significantly improved combined with COPlanner.		</p>
 	</div>
 	<div class="hr"></div>
 	<div>
