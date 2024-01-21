@@ -100,91 +100,6 @@ Dyna-style model-based reinforcement learning contains two phases: model rollout
 	</div>
 	<div class="hr"></div>
 	<div>
-		<h2>Supporting Open-Source Science</h2>
-		<div class="figure-caption">
-			<p>
-				We open-source a total of <span class="bold">324</span> TD-MPC<span class="bold">2</span> model checkpoints, including <span class="bold">12</span> multi-task models (ranging from 1M to 317M parameters) trained on 80, 70, and 30 tasks, respectively.
-			</p>
-			<div class="links" style="margin-bottom: 28px;">
-				<a href="/td-mpc2/models" class="btn"><i class="fa fa-cogs"></i>&ensp;Models</a><a href="/td-mpc2/dataset" class="btn"><i class="fa fa-database"></i>&ensp;Dataset</a>
-			</div>
-			<p>
-				Additionally, we also release the two 545M and 345M transition datasets that we used to train our multi-task models. The datasets are sourced from the replay buffers of 240 single-task agents and thus contain a wide range of behaviors.<br/><br/>
-			</p>
-			<table class="models">
-				<tbody>
-					<tr>
-						<th>Domains</th>
-						<th>Tasks</th>
-						<th>Embodiments</th>
-						<th>Episodes</th>
-						<th>Transitions</th>
-						<th>Size</th>
-						<th>Link</th>
-					</tr>
-					<tr class="models">
-						<td>
-							<video playsinline="" autoplay="" loop="" preload="" muted="" height="40px">
-								<source src="videos/tdmpc2-walker-run.mp4" type="video/mp4"/>
-							</video>
-							<video playsinline="" autoplay="" loop="" preload="" muted="" height="40px">
-								<source src="videos/tdmpc2-assembly.mp4" type="video/mp4"/>
-							</video>
-							<br/>
-							DMControl + Meta-World
-						</td>
-						<td>
-							80
-						</td>
-						<td>
-							12
-						</td>
-						<td>
-							2.69M
-						</td>
-						<td>
-							545M
-						</td>
-						<td>
-							34GB
-						</td>
-						<td>
-							<a href="/td-mpc2/dataset">Download</a>
-						</td>
-					</tr>
-					<tr class="models">
-						<td>
-							<video playsinline="" autoplay="" loop="" preload="" muted="" height="40px">
-								<source src="videos/tdmpc2-walker-run.mp4" type="video/mp4"/>
-							</video>
-							<br/>
-							DMControl
-						</td>
-						<td>
-							30
-						</td>
-						<td>
-							11
-						</td>
-						<td>
-							690k
-						</td>
-						<td>
-							345M
-						</td>
-						<td>
-							20GB
-						</td>
-						<td>
-							<a href="/td-mpc2/dataset">Download</a>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-			<p>
-				We are excited to see what the community will do with these models and datasets, and hope that our release will encourage other research labs to open-source their checkpoints as well.
-			</p>
-		</div>
 	</div>
 	<div class="hr"></div>
 	<div style="margin: auto; margin-bottom: 64px; text-align: center;">
@@ -212,19 +127,18 @@ Dyna-style model-based reinforcement learning contains two phases: model rollout
 			If you find our work useful, please consider citing the paper as follows:
 		</p>
 		<div id="bibtex-text" class="bibtexsection" onClick="window.getSelection().selectAllChildren(document.getElementById('bibtex-text'));">
-@misc{hansen2023tdmpc2,
-	title={TD-MPC2: Scalable, Robust World Models for Continuous Control}, 
-	author={Nicklas Hansen and Hao Su and Xiaolong Wang},
-	year={2023},
-	eprint={2310.16828},
-	archivePrefix={arXiv},
-	primaryClass={cs.LG}
+@article{wang2023coplanner,
+  title={COPlanner: Plan to Roll Out Conservatively but to Explore Optimistically for Model-Based RL},
+  author={Wang, Xiyao and Zheng, Ruijie and Sun, Yanchao and Jia, Ruonan and Wongkamjan, Wichayaporn and Xu, Huazhe and Huang, Furong},
+  journal={arXiv preprint arXiv:2310.07220},
+  year={2023}
+}
 }</div>
 	</div>
 </div>
 <footer>
 <a href="#top"><i class="fa fa-arrow-up"></i><br/>Return to top</a>
 <div style="padding-top: 48px;">
-	<span>Website based on <a href="https://nicklashansen.github.io/td-mpc">TD-MPC</a> and <a href="https://nerfies.github.io">Nerfies</a>.</span>
+	<span>Website based on <a href="https://nicklashansen.github.io/td-mpc2">TD-MPC2</a> and <a href="https://nerfies.github.io">Nerfies</a>.</span>
 </div>
 </footer>
