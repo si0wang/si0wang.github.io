@@ -1,0 +1,390 @@
+
+<head>
+	<title>COPlanner</title>
+	<meta property="og:title" content="COPlanner">
+	<meta property="og:description" content="COPlanner: Plan to Roll Out Conservatively but to Explore Optimistically for Model-Based RL">
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script type="text/javascript">
+		function toggle(id) {
+			var e = document.getElementById(id);
+			if(e.style.display == 'block')
+				e.style.display = 'none';
+			else
+				e.style.display = 'block';
+		}
+	</script>
+</head>
+<div class="header" id="top">
+	<div style="padding-bottom: 32px; text-align: center;">
+		<a href="https://si0wang.github.io/"><i class="fa fa-home"></i>&ensp;More research</a>
+	</div>
+	<h1><span class="bold">COPlanner: Plan to Roll Out Conservatively<br/> but to Explore Optimistically for Model-Based RL</h1>
+	<table class="authors">
+		<tbody>
+			<tr>
+				<td>
+					<h4>
+						<a href="https://si0wang.github.io/" class="nobreak">Xiyao Wang</a><sup>1</sup>,&ensp;
+						<a href="https://ruijiezheng.com/" class="nobreak">Ruijie Zhang</a><sup>1</sup>,&ensp;
+						<a href="https://ycsun2017.github.io/" class="nobreak">Yanchao Sun</a><sup>2</sup>,&ensp;
+            <a href="https://jiaruonan.github.io/" class="nobreak">Ruonan Jia</a><sup>3</sup>,&ensp;
+            <a href="https://wwongkamjan.github.io/" class="nobreak">Wichayaporn Wongkamjan</a><sup>1</sup>,&ensp;
+            <a href="http://hxu.rocks/" class="nobreak">Huazhe Xu</a><sup>2</sup>,&ensp;
+            <a href="https://furong-huang.com/" class="nobreak">Furong Huang</a><sup>1</sup>,&ensp;
+            <br/>
+						<span class="authors-affiliation"><sup>1</sup> University of Maryland, College Park</span>
+            <span class="authors-affiliation">&ensp;<sup>2</sup> JPMorgan AI Research</span>
+						<span class="authors-affiliation"><sup>3</sup> Tsinghua University</span>
+					</h4>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<div class="links">
+		<a href="https://arxiv.org/abs/2310.16828" class="btn"><i class="fa">&#xf1c1;</i>&ensp;Paper</a><a href="https://github.com/nicklashansen/tdmpc2" class="btn"><i class="fa fa-github"></i>&ensp;Code</a><a href="/td-mpc2/models" class="btn"><i class="fa fa-cogs"></i>&ensp;Models</a><a href="/td-mpc2/dataset" class="btn"><i class="fa fa-database"></i>&ensp;Dataset</a>
+	</div>
+</div>
+<div class="content">
+	<div class="hr"></div>
+	<div class="figure" style="height: 320px; background-image: url(images/0.png);"></div>
+	<div style="margin: auto; margin-top: -24px;">
+		<p>
+			<span class="bold red">Overview.</span> TD-MPC<span class="bold">2</span> compares favorably to existing model-free and model-based methods across <span class="bold">104</span> continuous control tasks spanning multiple domains, with a <span class="italic">single</span> set of hyperparameters (<span class="italic">right</span>). We further demonstrate the scalability of TD-MPC<span class="bold">2</span> by training a single 317M parameter agent to perform <span class="bold">80</span> tasks across multiple domains, embodiments, and action spaces (<span class="italic">left</span>).
+		</p>
+	</div>
+	<div class="hr"></div>
+	<div>
+		<h2>Abstract</h2>
+		<p class="abstract">
+			<a href="https://nicklashansen.github.io/td-mpc">TD-MPC</a> is a model-based reinforcement learning (MBRL) algorithm that performs local trajectory optimization in the latent space of a learned implicit (decoder-free) world model. In this work, we present TD-MPC<span class="bold">2</span>: a series of improvements upon the TD-MPC algorithm. We demonstrate that TD-MPC<span class="bold">2</span> improves significantly over baselines across <span class="bold">104</span> online RL tasks spanning 4 diverse task domains, achieving consistently strong results without any hyperparameter tuning. We further show that agent capabilities increase with model and data size, and successfully train a single agent to perform <span class="bold">80</span> tasks across multiple task domains, embodiments, and action spaces. We conclude with an account of lessons, opportunities, and risks associated with large TD-MPC<span class="bold">2</span> agents.
+		</p>
+	</div>
+	<div class="hr"></div>
+	<div>
+		<h2>TD-MPC2 Learns Diverse Tasks</h2>
+		<div class="figure-caption">
+			<p>
+				We evaluate TD-MPC<span class="bold">2</span> on <span class="bold">104</span> control tasks across 4 task domains: <a href="https://arxiv.org/abs/1801.00690">DMControl</a>, <a href="https://meta-world.github.io">Meta-World</a>, <a href="https://maniskill2.github.io">ManiSkill2</a>, and <a href="https://sites.google.com/view/myosuite">MyoSuite</a>.
+			</p>
+		</div>
+		<div class="content-video" style="margin-bottom: 32px">
+			<div class="content-video-container">
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="12%">
+					<source src="videos/tdmpc2-assembly.mp4" type="video/mp4"/>
+				</video>
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="12%">
+					<source src="videos/tdmpc2-dog-run.mp4" type="video/mp4"/>
+				</video>
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="12%">
+					<source src="videos/tdmpc2-turn-faucet-1.mp4" type="video/mp4"/>
+				</video>
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="12%">
+					<source src="videos/tdmpc2-cheetah-run.mp4" type="video/mp4"/>
+				</video>
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="12%">
+					<source src="videos/tdmpc2-pick-ycb-1.mp4" type="video/mp4"/>
+				</video>
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="12%">
+					<source src="videos/tdmpc2-dog-trot.mp4" type="video/mp4"/>
+				</video>
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="12%">
+					<source src="videos/tdmpc2-humanoid-spin.mp4" type="video/mp4"/>
+				</video>
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="12%">
+					<source src="videos/tdmpc2-coffee-pull.mp4" type="video/mp4"/>
+				</video>
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="12%">
+					<source src="videos/tdmpc2-obj-hold.mp4" type="video/mp4"/>
+				</video>
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="12%">
+					<source src="videos/tdmpc2-pick-ycb-5.mp4" type="video/mp4"/>
+				</video>
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="12%">
+					<source src="videos/tdmpc2-walker-run.mp4" type="video/mp4"/>
+				</video>
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="12%">
+					<source src="videos/tdmpc2-pick-place-wall.mp4" type="video/mp4"/>
+				</video>
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="12%">
+					<source src="videos/tdmpc2-stick-pull.mp4" type="video/mp4"/>
+				</video>
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="12%">
+					<source src="videos/tdmpc2-cartpole-swingup.mp4" type="video/mp4"/>
+				</video>
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="12%">
+					<source src="videos/tdmpc2-pendulum-swingup.mp4" type="video/mp4"/>
+				</video>
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="12%">
+					<source src="videos/tdmpc2-pick-ycb-6.mp4" type="video/mp4"/>
+				</video>
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="12%">
+					<source src="videos/tdmpc2-pick-ycb-0.mp4" type="video/mp4"/>
+				</video>
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="12%">
+					<source src="videos/tdmpc2-walker-run-backwards.mp4" type="video/mp4"/>
+				</video>
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="12%">
+					<source src="videos/tdmpc2-sweep-into.mp4" type="video/mp4"/>
+				</video>
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="12%">
+					<source src="videos/tdmpc2-cup-spin.mp4" type="video/mp4"/>
+				</video>
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="12%">
+					<source src="videos/tdmpc2-reacher-three-hard.mp4" type="video/mp4"/>
+				</video>
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="12%">
+					<source src="videos/tdmpc2-peg-unplug-side.mp4" type="video/mp4"/>
+				</video>
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="12%">
+					<source src="videos/tdmpc2-humanoid-run.mp4" type="video/mp4"/>
+				</video>
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="12%">
+					<source src="videos/tdmpc2-key-turn.mp4" type="video/mp4"/>
+				</video>
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="12%">
+					<source src="videos/tdmpc2-dog-walk.mp4" type="video/mp4"/>
+				</video>
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="12%">
+					<source src="videos/tdmpc2-fish-swim.mp4" type="video/mp4"/>
+				</video>
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="12%">
+					<source src="videos/tdmpc2-quadruped-run.mp4" type="video/mp4"/>
+				</video>
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="12%">
+					<source src="videos/tdmpc2-walker-run.mp4" type="video/mp4"/>
+				</video>
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="12%">
+					<source src="videos/tdmpc2-lever-pull.mp4" type="video/mp4"/>
+				</video>
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="12%">
+					<source src="videos/tdmpc2-hopper-hop.mp4" type="video/mp4"/>
+				</video>
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="12%">
+					<source src="videos/tdmpc2-stack-cube.mp4" type="video/mp4"/>
+				</video>
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="12%">
+					<source src="videos/tdmpc2-finger-turn-hard.mp4" type="video/mp4"/>
+				</video>
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="12%">
+					<source src="videos/tdmpc2-pen-twirl.mp4" type="video/mp4"/>
+				</video>
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="12%">
+					<source src="videos/tdmpc2-pendulum-spin.mp4" type="video/mp4"/>
+				</video>
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="12%">
+					<source src="videos/tdmpc2-cup-catch.mp4" type="video/mp4"/>
+				</video>
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="12%">
+					<source src="videos/tdmpc2-door-open.mp4" type="video/mp4"/>
+				</video>
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="12%">
+					<source src="videos/tdmpc2-pick-cube.mp4" type="video/mp4"/>
+				</video>
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="12%">
+					<source src="videos/tdmpc2-cheetah-run-front.mp4" type="video/mp4"/>
+				</video>
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="12%">
+					<source src="videos/tdmpc2-pick-ycb-2.mp4" type="video/mp4"/>
+				</video>
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="12%">
+					<source src="videos/tdmpc2-acrobot-swingup.mp4" type="video/mp4"/>
+				</video>
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="12%">
+					<source src="videos/tdmpc2-finger-spin.mp4" type="video/mp4"/>
+				</video>
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="12%">
+					<source src="videos/tdmpc2-turn-faucet-0.mp4" type="video/mp4"/>
+				</video>
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="12%">
+					<source src="videos/tdmpc2-stick-push.mp4" type="video/mp4"/>
+				</video>
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="12%">
+					<source src="videos/tdmpc2-bin-picking.mp4" type="video/mp4"/>
+				</video>
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="12%">
+					<source src="videos/tdmpc2-push-wall.mp4" type="video/mp4"/>
+				</video>
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="12%">
+					<source src="videos/tdmpc2-plate-slide-back-side.mp4" type="video/mp4"/>
+				</video>
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="12%">
+					<source src="videos/tdmpc2-hopper-hop-backwards.mp4" type="video/mp4"/>
+				</video>
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="12%">
+					<source src="videos/tdmpc2-cheetah-jump.mp4" type="video/mp4"/>
+				</video>
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="12%">
+					<source src="videos/tdmpc2-pick-out-of-hole.mp4" type="video/mp4"/>
+				</video>
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="12%">
+					<source src="videos/tdmpc2-humanoid-stand.mp4" type="video/mp4"/>
+				</video>
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="12%">
+					<source src="videos/tdmpc2-turn-faucet-2.mp4" type="video/mp4"/>
+				</video>
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="12%">
+					<source src="videos/tdmpc2-reacher-hard.mp4" type="video/mp4"/>
+				</video>
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="12%">
+					<source src="videos/tdmpc2-pick-ycb-3.mp4" type="video/mp4"/>
+				</video>
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="12%">
+					<source src="videos/tdmpc2-pick-ycb-4.mp4" type="video/mp4"/>
+				</video>
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="12%">
+					<source src="videos/tdmpc2-cheetah-run-backwards.mp4" type="video/mp4"/>
+				</video>
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="12%">
+					<source src="videos/tdmpc2-plate-slide-back-side.mp4" type="video/mp4"/>
+				</video>
+			</div>
+		</div>
+	</div>
+	<div class="hr"></div>
+	<div>
+		<h2>Benchmarking</h2>
+		<div class="figure-caption">
+			TD-MPC<span class="bold">2</span> compares favorably to existing model-free (<a href="https://arxiv.org/abs/1812.05905">SAC</a>) and model-based (<a href="https://arxiv.org/abs/2301.04104">DreamerV3</a> and <a href="https://arxiv.org/abs/2203.04955">TD-MPC</a>) online RL methods on a diverse set of 104 continuous control tasks. By design, TD-MPC2 achieves consistently strong results without <span class="italic">any</span> hyperparameter tuning, which has been instrumental for scaling to large massively multi-task world models.
+		</div>
+		<div class="figure" style="height: 208px; background-image: url(images/1.png);"></div>
+	</div>
+	<div class="hr"></div>
+	<div>
+		<h2>Massively Multitask World Models</h2>
+		<div class="figure-caption">
+			We evaluate the performance of 5 multitask models ranging from 1M to 317M parameters on a collection of 80 diverse tasks that span multiple task domains and vary greatly in objective, embodiment, and action space. The task set consists of all 50 Meta-World tasks, as well as 30 DMControl tasks. We also report scaling results on the DMControl subset. We observe that agent capabilities consistently increase with model size on both task sets.
+		</div>
+		<div class="figure" style="height: 288px; background-image: url(images/2.png);"></div>
+	</div>
+	<div class="hr"></div>
+	<div>
+		<h2>Supporting Open-Source Science</h2>
+		<div class="figure-caption">
+			<p>
+				We open-source a total of <span class="bold">324</span> TD-MPC<span class="bold">2</span> model checkpoints, including <span class="bold">12</span> multi-task models (ranging from 1M to 317M parameters) trained on 80, 70, and 30 tasks, respectively.
+			</p>
+			<div class="links" style="margin-bottom: 28px;">
+				<a href="/td-mpc2/models" class="btn"><i class="fa fa-cogs"></i>&ensp;Models</a><a href="/td-mpc2/dataset" class="btn"><i class="fa fa-database"></i>&ensp;Dataset</a>
+			</div>
+			<p>
+				Additionally, we also release the two 545M and 345M transition datasets that we used to train our multi-task models. The datasets are sourced from the replay buffers of 240 single-task agents and thus contain a wide range of behaviors.<br/><br/>
+			</p>
+			<table class="models">
+				<tbody>
+					<tr>
+						<th>Domains</th>
+						<th>Tasks</th>
+						<th>Embodiments</th>
+						<th>Episodes</th>
+						<th>Transitions</th>
+						<th>Size</th>
+						<th>Link</th>
+					</tr>
+					<tr class="models">
+						<td>
+							<video playsinline="" autoplay="" loop="" preload="" muted="" height="40px">
+								<source src="videos/tdmpc2-walker-run.mp4" type="video/mp4"/>
+							</video>
+							<video playsinline="" autoplay="" loop="" preload="" muted="" height="40px">
+								<source src="videos/tdmpc2-assembly.mp4" type="video/mp4"/>
+							</video>
+							<br/>
+							DMControl + Meta-World
+						</td>
+						<td>
+							80
+						</td>
+						<td>
+							12
+						</td>
+						<td>
+							2.69M
+						</td>
+						<td>
+							545M
+						</td>
+						<td>
+							34GB
+						</td>
+						<td>
+							<a href="/td-mpc2/dataset">Download</a>
+						</td>
+					</tr>
+					<tr class="models">
+						<td>
+							<video playsinline="" autoplay="" loop="" preload="" muted="" height="40px">
+								<source src="videos/tdmpc2-walker-run.mp4" type="video/mp4"/>
+							</video>
+							<br/>
+							DMControl
+						</td>
+						<td>
+							30
+						</td>
+						<td>
+							11
+						</td>
+						<td>
+							690k
+						</td>
+						<td>
+							345M
+						</td>
+						<td>
+							20GB
+						</td>
+						<td>
+							<a href="/td-mpc2/dataset">Download</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p>
+				We are excited to see what the community will do with these models and datasets, and hope that our release will encourage other research labs to open-source their checkpoints as well.
+			</p>
+		</div>
+	</div>
+	<div class="hr"></div>
+	<div style="margin: auto; margin-bottom: 64px; text-align: center;">
+		<h2>Paper</h2>
+		<span class="bold">TD-MPC<span class="vbold red">2</span>: Scalable, Robust World Models for Continuous Control</span><br/>
+		<span class="italic">Nicklas Hansen, Hao Su, Xiaolong Wang</span><br/><br/>
+		<a href="https://arxiv.org/abs/2310.16828">arXiv preprint</a><br/><br/>
+		<div class="page" style="background-image: url(thumbnails/0.png);"></div>
+		<div class="page" style="background-image: url(thumbnails/1.png);"></div>
+		<div class="page" style="background-image: url(thumbnails/2.png);"></div>
+		<div class="page" style="background-image: url(thumbnails/3.png);"></div>
+		<div class="page" style="background-image: url(thumbnails/4.png);"></div>
+		<div class="page" style="background-image: url(thumbnails/5.png);"></div>
+		<div class="page" style="background-image: url(thumbnails/6.png);"></div>
+		<div class="page" style="background-image: url(thumbnails/7.png);"></div>
+		<div class="page" style="background-image: url(thumbnails/8.png);"></div>
+		<div style="margin: auto; margin-top: 32px;">
+			<a href="https://arxiv.org/abs/2310.16828">View on arXiv</a>
+		</div>
+	</div>
+	<div class="hr"></div>
+	<div style="padding-bottom: 64px; text-align: center;">
+		<h2>Citation</h2>
+		<p>
+			If you find our work useful, please consider citing the paper as follows:
+		</p>
+		<div id="bibtex-text" class="bibtexsection" onClick="window.getSelection().selectAllChildren(document.getElementById('bibtex-text'));">
+@misc{hansen2023tdmpc2,
+	title={TD-MPC2: Scalable, Robust World Models for Continuous Control}, 
+	author={Nicklas Hansen and Hao Su and Xiaolong Wang},
+	year={2023},
+	eprint={2310.16828},
+	archivePrefix={arXiv},
+	primaryClass={cs.LG}
+}</div>
+	</div>
+</div>
+<footer>
+<a href="#top"><i class="fa fa-arrow-up"></i><br/>Return to top</a>
+<div style="padding-top: 48px;">
+	<span>Website based on <a href="https://nicklashansen.github.io/td-mpc">TD-MPC</a> and <a href="https://nerfies.github.io">Nerfies</a>.</span>
+</div>
+</footer>
