@@ -82,7 +82,7 @@ We adopt random shooting during action selection before model rollouts and envir
 	<div>
 		<h2>Comparison with end-to-end world model-based methods</h2>
 		<div class="figure-caption">
-We combine <span class="bold red">COPlanner</span> with MBPO and conduct comparisons with other MBPO-style MBRL methods across 12 continuous control tasks in MuJoCo-GYM and DMC environments. <span class="bold red">COPlanner</span> demonstrates a significant improvement in sample efficiency and performance compared to other methods.
+We combine <span class="bold red">COPlanner</span> with <span class="bold red">MBPO</span> and conduct comparisons with other MBPO-style MBRL methods across 12 continuous proprioceptive control tasks in MuJoCo-GYM and DMC environments. <span class="bold red">COPlanner</span> demonstrates a significant improvement in sample efficiency and performance compared to other methods.
 		</div>
 		<div class="figure" style="height: 320px; background-image: url(Figures/exp_propinput_new.png);"></div>
 	</div>
@@ -90,12 +90,9 @@ We combine <span class="bold red">COPlanner</span> with MBPO and conduct compari
 	<div>
 		<h2>Comparison with latent world model-based methods</h2>
 		<div class="figure-caption">
-			We evaluate the performance of 5 multitask models ranging from 1M to 317M parameters on a collection of 80 diverse tasks that span multiple task domains and vary greatly in objective, embodiment, and action space. The task set consists of all 50 Meta-World tasks, as well as 30 DMControl tasks. We also report scaling results on the DMControl subset. We observe that agent capabilities consistently increase with model size on both task sets.
+We also combine our method with the state-of-the-art latent world model-based RL method, <span class="bold red">DreamerV3</span>, and conduct experimental comparisons. <span class="bold red">COPlanner</span> achieves new state-of-the-art sample efficiency and performance in 8 visual continuous control tasks (top) and 6 proprioceptive continuous control tasks (bottom) on DMC.
 		</div>
 		<div class="figure" style="height: 320px; background-image: url(Figures/exp_dreamerv3_new.png);"></div>
-		<div class="figure-caption">
-			We evaluate the performance of 5 multitask models ranging from 1M to 317M parameters on a collection of 80 diverse tasks that span multiple task domains and vary greatly in objective, embodiment, and action space. The task set consists of all 50 Meta-World tasks, as well as 30 DMControl tasks. We also report scaling results on the DMControl subset. We observe that agent capabilities consistently increase with model size on both task sets.
-		</div>
 		<div class="figure" style="height: 320px; background-image: url(Figures/exp_propdreamer.png);"></div>
 	</div>
 	<div class="hr"></div>
