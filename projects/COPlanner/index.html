@@ -74,7 +74,7 @@ Dyna-style model-based reinforcement learning contains two phases: model rollout
 		<h2>Uncertainty-aware Policy-guided MPC (UP-MPC)</h2>
 		<div class="figure-caption">
 			<p>
-				We evaluate TD-MPC<span class="bold">2</span> on <span class="bold">104</span> control tasks across 4 task domains: <a href="https://arxiv.org/abs/1801.00690">DMControl</a>, <a href="https://meta-world.github.io">Meta-World</a>, <a href="https://maniskill2.github.io">ManiSkill2</a>, and <a href="https://sites.google.com/view/myosuite">MyoSuite</a>.
+We adopt random shooting during action selection before model rollouts and environment interaction. This process involves assessing the future uncertainty induced by each action through multi-step planning. During model rollouts, this uncertainty serves as a penalty to restrict action choices, encouraging the agent to improve policy within model certain regions, thereby avoiding model error. During interaction with the environment, the uncertainty acts as a bonus, motivating the agent to explore model uncertain regions but potentially high in rewards, thereby reducing world model errors.
 			</p>
 		<div class="figure" style="height: 320px; background-image: url(Figures/MPC_v2.png);"></div>
 		</div>
@@ -104,7 +104,7 @@ Dyna-style model-based reinforcement learning contains two phases: model rollout
 	<div class="hr"></div>
 	<div style="margin: auto; margin-bottom: 64px; text-align: center;">
 		<h2>Paper</h2>
-		<span class="bold">TD-MPC<span class="vbold red">2</span>: Scalable, Robust World Models for Continuous Control</span><br/>
+		<span class="bold">COPlanner: Plan to Roll Out Conservatively but to Explore Optimistically for Model-Based RL</span><br/>
 		<span class="italic">Nicklas Hansen, Hao Su, Xiaolong Wang</span><br/><br/>
 		<a href="https://arxiv.org/abs/2310.16828">arXiv preprint</a><br/><br/>
 		<div class="page" style="background-image: url(thumbnails/0.png);"></div>
