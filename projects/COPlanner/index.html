@@ -82,7 +82,7 @@ We adopt random shooting during action selection before model rollouts and envir
 	<div>
 		<h2>Comparison with end-to-end world model-based methods</h2>
 		<div class="figure-caption">
-			TD-MPC<span class="bold">2</span> compares favorably to existing model-free (<a href="https://arxiv.org/abs/1812.05905">SAC</a>) and model-based (<a href="https://arxiv.org/abs/2301.04104">DreamerV3</a> and <a href="https://arxiv.org/abs/2203.04955">TD-MPC</a>) online RL methods on a diverse set of 104 continuous control tasks. By design, TD-MPC2 achieves consistently strong results without <span class="italic">any</span> hyperparameter tuning, which has been instrumental for scaling to large massively multi-task world models.
+We combine <span class="bold red">COPlanner</span> with MBPO and conduct comparisons with other MBPO-style MBRL methods across 12 continuous control tasks in MuJoCo-GYM and DMC environments. <span class="bold red">COPlanner</span> demonstrates a significant improvement in sample efficiency and performance compared to other methods.
 		</div>
 		<div class="figure" style="height: 320px; background-image: url(Figures/exp_propinput_new.png);"></div>
 	</div>
