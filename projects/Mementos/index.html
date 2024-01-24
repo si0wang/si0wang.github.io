@@ -504,9 +504,10 @@ behavioral hallucinations, the influence of cooccurring behaviors, and the compo
         <div class="column is-four-fifths">
         <h2 class="title is-3">GPT-4-assisted Evaluation</h2>
         <div class="content has-text-justified">
-<!--             <p>
-            GPT-4V with s-input demonstrates the best reasoning capability compared with all other MLLMs in understanding image sequences. Among open-source models, LLaVA1.5 performs the best, nearly matching or even surpassing the black-box model Gemini in object comprehension, but its ability to infer behaviors from image sequences is weaker compared to Gemini and GPT-4V.
-          </p> -->
+            <p>
+We employ a GPT-4-assisted evaluation procedure: after an MLLM produces a description for an image sequence, 
+we extract behavior and object keywords from both AI-generated and human-annotated descriptions using GPT-4, then use keyword matching to assess the degree of behavioral and object hallucinations. 
+            </p>
           <div class="content has-text-centered">
                 <img src="static/images/procedure.png" width="600" height="600"/>
           </div> 
