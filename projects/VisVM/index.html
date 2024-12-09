@@ -178,23 +178,31 @@ for developing self-improving VLMs.
         <div class="content has-text-justified">
           <p > Vision Value Model (VisVM) is a value network which can provide reward signal to guide VLM inference-time
 search by generating descriptive captions in a step-by-step manner. 
-The core innovation lies in breaking down diverse responses from VLM into sentence pairs and using CLIP as the reward signal to train VisVM through Temporal Difference learning.
-This enables VisVM to predict the impact of current sentences on future generations, 
-allowing it to avoid response candidates during inference time
-with higher hallucination risks and generate image descriptions that are less prone to hallucination and more detailed.
 	  </p>
 		</div>
 		<div class="content has-text-centered">
                 <img src="static/images/figure1.png" width="1000" height="600"/>
           </div> 
-      <div class="mt-3">
-	      An illustration of how VisVM can better guide vision language model (VLM) during inference-time search. 
-        </div>
+	<div class="content has-text-justified">
+	<p>
+		The core innovation lies in breaking down diverse responses from VLM into sentence pairs and using CLIP as the reward signal to train VisVM through Temporal Difference learning.
+	</p>
+	  </div>  
+	      <div class="content has-text-centered">
+                <img src="static/images/TD Learning.png" width="1000" height="100"/>
+          </div>
+	<div class="content has-text-justified">
+	<p>
+This enables VisVM to predict the impact of current sentences on future generations, 
+allowing it to avoid response candidates during inference time
+with higher hallucination risks and generate image descriptions that are less prone to hallucination and more detailed.
+	</p>
   
       </div>
     </div>
   
   </div>
+	  </div>
 </section>
 
 
