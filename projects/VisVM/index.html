@@ -277,14 +277,6 @@ response for the current step. This process continues iteratively until the comp
     <div class="columns is-centered">
       <div class="column is-full-width has-text-centered">
         <h2 class="title is-3">VisVM for Self-Training Vision-Language Model</h2>
-        <div class="content has-text-justified">
-          <p > <b>Vis</b>ion <b>V</b>alue <b>M</b>odel (VisVM) is a value network which can provide reward signal to guide VLM inference-time
-search by generating descriptive captions in a step-by-step manner. 
-	  </p>
-		</div>
-		<div class="content has-text-centered">
-                <img src="static/images/figure1.png" width="1000" height="600"/>
-          </div> 
 	<div class="content has-text-justified">
 	<p>
 	We use LLAVA-next-7B as the base model, leveraging VisVM as a reward signal to generate high-quality image descriptions as SFT data and train LLaVA-Next-7B. 
