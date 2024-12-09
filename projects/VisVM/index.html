@@ -1,59 +1,89 @@
-
+<!DOCTYPE html>
+<html>
 <head>
-	<title>VisVM</title>
-	<meta property="og:title" content="VisVM">
-	<meta property="og:description" content="Scaling Inference-Time Search with Vision Value Model for Improved Visual Comprehension">
-	<link rel="stylesheet" href="style.css">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<script type="text/javascript">
-		function toggle(id) {
-			var e = document.getElementById(id);
-			if(e.style.display == 'block')
-				e.style.display = 'none';
-			else
-				e.style.display = 'block';
-		}
-	</script>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>VisVM</title>
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
 </head>
-<!-- <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Scaling Inference-Time Search with Vision Value Model for Improved Visual Comprehension</title>
-<meta name="description" content="Abstract">
-<link rel="stylesheet" href="asset/css/drm.css">
-<link rel="canonical" href="https://si0wang.github.io/">
-<link rel="shortcut icon" href="asset/favicon.jpg"> 
-</head> -->
-<div class="header" id="top">
-<!-- 	<div style="padding-bottom: 32px; text-align: center;">
-		<a href="https://si0wang.github.io/"><i class="fa fa-home"></i>&ensp;More research</a>
-	</div> -->
-	<h1><span class="bold">Scaling Inference-Time Search with Vision Value Model <br> for Improved Visual Comprehension</h1>
-	<table class="authors">
-		<tbody>
-			<tr>
-				<td>
-					<h4>
-						<a href="https://si0wang.github.io/" class="nobreak">Xiyao Wang</a><sup>1, 2</sup>,&ensp;
-						<a href="https://zyang-ur.github.io/" class="nobreak">Zhengyuan Yang</a><sup>2</sup>,&ensp;
-						<a href="https://www.microsoft.com/en-us/research/people/linjli/" class="nobreak">Linjie Li</a><sup>2</sup>,&ensp;
-						<a href="THIRD AUTHOR PERSONAL LINK" class="nobreak">Hongjin Lu</a><sup>1</sup>,&ensp;
-            					<a href="https://yuancheng-xu.github.io/" class="nobreak">Yuancheng Xu</a><sup>1</sup>,&ensp;
-            					<a href="https://www.microsoft.com/en-us/research/people/chunglin/" class="nobreak">Chung-Ching Lin</a><sup>2</sup>,&ensp;
-						<a href="https://sites.google.com/site/kevinlin311tw/" class="nobreak">Kevin Lin</a><sup>2</sup>,&ensp;
-            					<a href="https://furong-huang.com/" class="nobreak">Furong Huang</a><sup>1, *</sup>,&ensp;
-						<a href="https://www.microsoft.com/en-us/research/people/lijuanw/" class="nobreak">Lijuan Wang</a><sup>2, *</sup>,&ensp;
-            <br/>
-						<span class="authors-affiliation"><sup>1</sup> University of Maryland, College Park</span>
-            					<span class="authors-affiliation">&ensp;<sup>2</sup> Microsoft</span>
-						<span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Advising</small></span>
-					</h4>
-				</td>
-			</tr>
-		</tbody>
-	</table>
-	<div class="column has-text-centered">
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title is-bold">
+            </h1>
+            <h4 class="title is-3 publication-title">Scaling Inference-Time Search with Vision Value Model 
+		    for Improved Visual Comprehension</h4>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+              <a href="https://si0wang.github.io/">Xiyao Wang</a><sup>1</sup>,</span>
+              <span class="author-block">
+              <a href="https://zyang-ur.github.io/">Zhengyuan Yang</a><sup>2</sup>,</span>
+              <span class="author-block">
+              <a href="https://www.microsoft.com/en-us/research/people/linjli/">Linjie Li</a><sup>2</sup>,</span>
+              <span class="author-block">
+              <a href="THIRD AUTHOR PERSONAL LINK">Hongjin Lu</a><sup>1</sup>,</span>
+              <span class="author-block">
+              <a href="https://yuancheng-xu.github.io/">Yuancheng Xu</a><sup>1</sup>,</span>
+              <span class="author-block">
+              <a href="https://www.microsoft.com/en-us/research/people/chunglin/">Chung-Ching Lin</a><sup>2</sup>,</span>
+              <span class="author-block">
+              <a href="https://sites.google.com/site/kevinlin311tw/">Kevin Lin</a><sup>2</sup>,</span>
+              <span class="author-block">
+              <a href="https://furong-huang.com/">Furong Huang</a><sup>1*</sup>,</span>
+              <span class="author-block">
+              <a href="https://www.microsoft.com/en-us/research/people/lijuanw/">Lijuan Wang</a><sup>2, *</sup>,</span>
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block"><sup>1</sup> University of Maryland, College Park</span><br/>
+                    <span class="author-block"><sup>2</sup> Microsoft</span>
+                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Advising</small></span>
+                  </div>
+
+                  <div class="column has-text-centered">
                     <div class="publication-links">
                          <!-- Arxiv PDF link -->
                       <span class="link-block">
@@ -96,93 +126,437 @@
                       <p style="font-size:18px">🤗</p>
                       <!-- 🔗 -->
                   </span>
-                  <span>Model</span>
+                  <span>Dataset</span>
                 </a>
               </span>
-</div>
-<div class="content">
-	<div class="hr"></div>
-	<div class="figure" style="height: 320px; background-image: url(Figures/framework_v3.png);"></div>
-	<div style="margin: auto; margin-top: -24px;">
-		<p>
-		We present <span class="bold red">COPlanner</span>, a powerful planning-driven framework for model-based Reinforcement Learning to mitigate the impact of imperfect world models and boosting policy learning. <span class="bold red">COPlanner</span> is a plug-and-play framework that can be applied to any dyna-style model-based methods.		
-		</p>
-	</div>
-	<div class="hr"></div>
-	<div>
-		<h2>Abstract</h2>
-		<p class="abstract">
-Dyna-style model-based reinforcement learning contains two phases: model rollouts to generate sample for policy learning and real environment exploration using current policy for dynamics model learning. However, due to the complex real-world environment, it is inevitable to learn an imperfect dynamics model with model prediction error, which can further mislead policy learning and result in sub-optimal solutions. In this paper, we propose COPlanner, a planning-driven framework for model-based methods to address the inaccurately learned dynamics model problem with conservative model rollouts and optimistic environment exploration. COPlanner leverages an uncertainty-aware policy-guided model predictive control (UP-MPC) component to plan for multi-step uncertainty estimation. This estimated uncertainty then serves as a penalty during model rollouts and as a bonus during real environment exploration  respectively, to choose actions. Consequently, COPlanner can avoid model uncertain regions through conservative model rollouts,  thereby alleviating the influence of model error. Simultaneously, it explores high-reward model uncertain regions to reduce model error actively through optimistic real environment exploration. COPlanner is a plug-and-play framework that can be applied to any dyna-style model-based methods. Experimental results on a series of proprioceptive and visual continuous control tasks demonstrate that both sample efficiency and asymptotic performance of strong model-based methods are significantly improved combined with COPlanner.		</p>
-	</div>
-	<div class="hr"></div>
-	<div>
-		<h2>Uncertainty-aware Policy-guided MPC (UP-MPC)</h2>
-		<div class="figure-caption">
-			<p>
-We adopt random shooting during action selection before model rollouts and environment interaction. This process involves assessing the future uncertainty induced by each action through multi-step planning. During model rollouts, this uncertainty serves as a penalty to restrict action choices, encouraging the agent to improve policy within model certain regions, thereby avoiding model error. During interaction with the environment, the uncertainty acts as a bonus, motivating the agent to explore model uncertain regions but potentially high in rewards, thereby reducing world model errors.
-			</p>
-		<div class="figure" style="height: 320px; background-image: url(Figures/MPC_v2.png);"></div>
-		</div>
-	<div class="hr"></div>
-	<div>
-		<h2>Comparison with end-to-end world model-based methods</h2>
-		<div class="figure-caption">
-We combine <span class="bold red">COPlanner</span> with <span class="bold red">MBPO</span> and conduct comparisons with other MBPO-style MBRL methods across 12 continuous proprioceptive control tasks in MuJoCo-GYM and DMC environments. <span class="bold red">COPlanner</span> demonstrates a significant improvement in sample efficiency and performance compared to other methods.
-		</div>
-		<div class="figure" style="height: 320px; background-image: url(Figures/exp_propinput_new.png);"></div>
-	</div>
-	<div class="hr"></div>
-	<div>
-		<h2>Comparison with latent world model-based methods</h2>
-		<div class="figure-caption">
-We also combine our method with the state-of-the-art latent world model-based RL method, <span class="bold red">DreamerV3</span>, and conduct experimental comparisons. <span class="bold red">COPlanner</span> achieves new state-of-the-art sample efficiency and performance in 8 visual continuous control tasks (top) and 6 proprioceptive continuous control tasks (bottom) on DMC.
-		</div>
-		<div class="figure" style="height: 320px; background-image: url(Figures/exp_dreamerv3_new.png);"></div>
-		<div class="figure" style="height: 320px; background-image: url(Figures/exp_propdreamer.png);"></div>
-	</div>
-	<div class="hr"></div> 
-	<h2>Visualized Comparison with DreamerV3</h2>
-		<div class="figure" style="height: 320px; background-image: url(Figures/COPlanner-MainThread.gif);"></div>
-<!--         <video playsinline="" autoplay="" loop="" preload="" muted="" height: 240px>
-								<source src="Figures/demos.mp4" type="video/mp4"/>
-							</video> -->
-	<div class="hr"></div> 
- 	<div style="margin: auto; margin-bottom: 64px; text-align: center;">
-		<h2>Paper</h2>
-		<span class="bold">COPlanner: Plan to Roll Out Conservatively but to Explore Optimistically for Model-Based RL</span><br/>
-		<span class="italic">Xiyao Wang, Ruijie Zheng, Yanchao Sun, Ruonan Jia, Wichayaporn Wongkamjan, Huazhe Xu, Furong Huang</span><br/><br/>
-		<a href="https://arxiv.org/abs/2310.07220">ICLR 2024</a><br/><br/>
-		<div class="page" style="background-image: url(Figures/0.png);"></div>
-		<div class="page" style="background-image: url(Figures/1.png);"></div>
-		<div class="page" style="background-image: url(Figures/2.png);"></div>
-		<div class="page" style="background-image: url(Figures/3.png);"></div>
-		<div class="page" style="background-image: url(Figures/4.png);"></div>
-		<div class="page" style="background-image: url(Figures/5.png);"></div>
-		<div class="page" style="background-image: url(Figures/6.png);"></div>
-		<div class="page" style="background-image: url(Figures/7.png);"></div>
-		<div class="page" style="background-image: url(Figures/8.png);"></div>
-		<div style="margin: auto; margin-top: 32px;">
-			<a href="https://arxiv.org/abs/2310.07220">View on arXiv</a>
-		</div>
-	</div>
-	<div class="hr"></div>
-	<div style="padding-bottom: 64px; text-align: center;">
-		<h2>Citation</h2>
-		<p>
-			If you find our work useful, please consider citing the paper as follows:
-		</p>
-		<div id="bibtex-text" class="bibtexsection" onClick="window.getSelection().selectAllChildren(document.getElementById('bibtex-text'));">
-@article{wang2023coplanner,
-  title={COPlanner: Plan to Roll Out Conservatively but to Explore Optimistically for Model-Based RL},
-  author={Wang, Xiyao and Zheng, Ruijie and Sun, Yanchao and Jia, Ruonan and Wongkamjan, Wichayaporn and Xu, Huazhe and Huang, Furong},
-  booktitle={International Conference on Learning Representations},
-  year={2024}
-}</div>
-	</div>
-</div>
-<footer>
-<a href="#top"><i class="fa fa-arrow-up"></i><br/>Return to top</a>
-<div style="padding-top: 48px;">
-	<span>Website based on <a href="https://nicklashansen.github.io/td-mpc2">TD-MPC2</a> and <a href="https://nerfies.github.io">Nerfies</a>.</span>
-</div>
+                      
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Despite significant advancements in vision-language
+models (VLMs), there lacks effective approaches to enhance response quality by scaling inference-time computation. This capability is known to be a core step towards the
+self-improving models in recent large language model studies. In this paper, we present Vision Value Model (VisVM)
+that can guide VLM inference-time search to generate responses with better visual comprehension. Specifically,
+VisVM not only evaluates the generated sentence quality in
+the current search step, but also anticipates the quality of
+subsequent sentences that may result from the current step,
+thus providing a long-term value. In this way, VisVM steers
+VLMs away from generating sentences prone to hallucinations or insufficient detail, thereby producing higher quality 
+responses. Experimental results demonstrate that VisVMguided search significantly enhances VLMs’ ability to generate descriptive captions with richer visual details and
+fewer hallucinations, compared with greedy decoding and
+search methods with other visual reward signals. Furthermore, we find that self-training the model with the VisVMguided captions improve VLM’s performance across a wide
+range of multimodal benchmarks, indicating the potential
+for developing self-improving VLMs.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+<section class="section">
+  <div class="container">
+    
+    <div class="columns is-centered">
+      <div class="column is-full has-text-centered content">
+        <h2 class="title is-3" id="leaderboard_test">Leaderboard</h2>
+        <div class="content">
+          <p class="mt-3">Recall. Precision, and F1 scores of Object and Behavior on <b>Val</b> set of <img src="static/images/film_frames.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
+            <span class="mathvista">Mementos</span>.
+          </p>
+
+          <table class="js-sort-table" id="results">
+            <tr>
+                <td class="js-sort-number"><strong>#</strong></td>
+                <td class="js-sort-number"><strong>Model</strong></td>
+                <td class="js-sort-number"><strong>Input type</strong></td>
+                <td class="js-sort-number"><strong>Source</strong></td>
+                <td class="js-sort-number"><strong>Date</strong></td>
+                <td class="js-sort-number"><strong><u>Avg</u></strong></td>
+                <td class="js-sort-number"><strong>Object-Recall</strong></td>
+                <td class="js-sort-number"><strong>Object-Precision</strong></td>
+                <td class="js-sort-number"><strong>Object-F1</strong></td>
+                <td class="js-sort-number"><strong>Behavior-Recall</strong></td>
+                <td class="js-sort-number"><strong>Behavior-Precision</strong></td>
+                <td class="js-sort-number"><strong>Behavior-F1</strong></td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td><b class="best-score-text">GPT-4V 🥇</b></td>
+              <td>Sequential</td>
+              <td><a href="https://openai.com/research/gpt-4v-system-card" class="ext-link" style="font-size: 16px;">Link</a></td>
+              <td>2024-01-20</td>
+              <td><b class="best-score-text">45.68</b></td>
+              <td>60.24</td>
+              <td>54.13</td>
+              <td>55.36</td>
+              <td>42.36</td>
+              <td>29.40</td>
+              <td>32.58</td>                               
+            </tr>
+            <tr>
+              <td>2</td>
+              <td><b class="best-score-text">Gemini 🥈</b></td>
+              <td>Sequential</td>
+              <td><a href="https://arxiv.org/abs/2312.11805" class="ext-link" style="font-size: 16px;">Link</a></td>
+              <td>2024-01-20</td>
+              <td><b>33.98</b></td>
+              <td>38.36</td>
+              <td>43.12</td>
+              <td>38.91</td>
+              <td>26.28</td>
+              <td>31.01</td>
+              <td>26.18</td>                          
+            </tr>
+            <tr>
+              <td>3</td>
+              <td><b class="best-score-text">LLaVA-1.5 🥉</b></td>
+              <td>Combined</td>
+              <td><a href="https://github.com/haotian-liu/LLaVA" class="ext-link" style="font-size: 16px;">Link</a></td>
+              <td>2024-01-20</td>
+              <td><b>32.78</b></td>
+              <td>36.90</td>
+              <td>46.14</td>
+              <td>39.29</td>
+              <td>22.09</td>
+              <td>29.22</td>
+              <td>23.01</td>                              
+            </tr>    
+            
+            <tr>
+              <td>4</td>
+              <td><b class="best-score-text">Chat-UniVi</b></td>
+              <td>Sequential</td>
+              <td><a href="https://github.com/PKU-YuanGroup/Chat-UniVi" class="ext-link" style="font-size: 16px;">Link</a></td>
+              <td>2024-01-20</td>
+              <td><b class="best-score-text">31.69</b></td>
+              <td>39.09</td>
+              <td>38.26</td>
+              <td>37.06</td>
+              <td>25.36</td>
+              <td>26.67</td>
+              <td>23.74</td>                          
+            </tr>
+            <tr>
+              <td>5</td>
+              <td><b class="best-score-text">Gemini</b></td>
+              <td>Combined</td>
+              <td><a href="https://arxiv.org/abs/2312.11805" class="ext-link" style="font-size: 16px;">Link</a></td>
+              <td>2024-01-20</td>
+              <td><b class="best-score-text">30.44</b></td>
+              <td>33.28</td>
+              <td>39.47</td>
+              <td>34.42</td>
+              <td>26.76</td>
+              <td>25.38</td>
+              <td>23.33</td>                          
+            </tr>
+            <tr>
+              <td>6</td>
+              <td><b class="best-score-text">GPT-4v</b></td>
+              <td>Combined</td>
+              <td><a href="https://openai.com/research/gpt-4v-system-card" class="ext-link" style="font-size: 16px;">Link</a></td>
+              <td>2024-01-20</td>
+              <td><b>30.13</b></td>
+              <td>35.41</td>
+              <td>36.34</td>
+              <td>34.46</td>
+              <td>30.70</td>
+              <td>20.82</td>
+              <td>23.07</td>                               
+            </tr>
+            <tr>
+              <td>7</td>
+              <td><b>mPLUG_Owl-v2</b></td>
+              <td>Combined</td>
+              <td><a href="https://github.com/X-PLUG/mPLUG-Owl" class="ext-link" style="font-size: 16px;">Link</a></td>
+              <td>2024-01-20</td>
+              <td><b>28.26</b></td>
+              <td>28.51</td>
+              <td>40.65</td>
+              <td>32.20</td>
+              <td>19.74</td>
+              <td>27.81</td>
+              <td>20.64</td>                              
+            </tr> 
+            <tr>
+              <td>8</td>
+              <td><b>InstructBLIP</b></td>
+              <td>Combined</td>
+              <td><a href="https://github.com/salesforce/LAVIS/tree/main/projects/instructblip" class="ext-link" style="font-size: 16px;">Link</a></td>
+              <td>2024-01-20</td>
+              <td><b>27.10</b></td>
+              <td>27.37</td>
+              <td>33.86</td>
+              <td>28.77</td>
+              <td>23.98</td>
+              <td>25.69</td>
+              <td>22.92</td>                              
+            </tr> 
+            <tr>
+              <td>9</td>
+              <td><b class="best-score-text">Chat-UniVi</b></td>
+              <td>Combined</td>
+              <td><a href="https://github.com/PKU-YuanGroup/Chat-UniVi" class="ext-link" style="font-size: 16px;">Link</a></td>
+              <td>2024-01-20</td>
+              <td><b class="best-score-text">25.67</b></td>
+              <td>30.14</td>
+              <td>32.24</td>
+              <td>29.86</td>
+              <td>20.32</td>
+              <td>21.97</td>
+              <td>19.52</td>                          
+            </tr>   
+            <tr>
+              <td>10</td>
+              <td><b class="best-score-text">Video-LLaMA-2</b></td>
+              <td>Sequential</td>
+              <td><a href="https://github.com/DAMO-NLP-SG/Video-LLaMA" class="ext-link" style="font-size: 16px;">Link</a></td>
+              <td>2024-01-20</td>
+              <td><b class="best-score-text">21.13</b></td>
+              <td>25.59</td>
+              <td>23.50</td>
+              <td>23.35</td>
+              <td>16.21</td>
+              <td>21.47</td>
+              <td>16.62</td>                          
+            </tr>
+    
+            <tr>
+              <td>11</td>
+              <td><b>MiniGPT4</b></td>
+              <td>Combined</td>
+              <td><a href="https://github.com/Vision-CAIR/MiniGPT-4" class="ext-link" style="font-size: 16px;">Link</a></td>
+              <td>2024-01-20</td>
+              <td><b>18.73</b></td>
+              <td>25.33</td>
+              <td>17.95</td>
+              <td>20.01</td>
+              <td>16.02</td>
+              <td>17.82</td>
+              <td>15.26</td>                              
+            </tr>    
+            <tr>
+              <td>12</td>
+              <td><b>MiniGPT5</b></td>
+              <td>Combined</td>
+              <td><a href="https://github.com/eric-ai-lab/MiniGPT-5" class="ext-link" style="font-size: 16px;">Link</a></td>
+              <td>2024-01-20</td>
+              <td><b>18.28</b></td>
+              <td>24.58</td>
+              <td>17.69</td>
+              <td>19.44</td>
+              <td>15.04</td>
+              <td>17.93</td>
+              <td>15.02</td>                              
+            </tr>   
+            
+        </table>
+          <p>🚨 To submit your results to the leaderboard, please send to <a href="mailto:xywang@umd.edu">this email</a> with your result json files.</p>
+          <p>🚨 For more submission details, please refer to <a href="https://github.com/si0wang/Mementos">Evaluation</a>.</p>
+          
+        </div>
+  
+      </div>
+    </div>
+  
+  </div>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+  <h1 class="title is-1">
+    <img src="static/images/film_frames.png" style="width:1em;vertical-align: middle" alt="Logo"/>
+    <span style="vertical-align: middle">Mementos Dataset</span>
+  </h1>
+  </div>
+</section>
+  
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <!-- <div class="column is-full-width has-text-centered"> -->
+        <div class="column is-four-fifths">
+        <h2 class="title is-3">Overview</h2>
+        <div class="content has-text-justified">
+          <p>
+            <img src="static/images/film_frames.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
+            <span>Mementos</span> is a comprehensive benchmark designed to evaluate the reasoning capability of Multimodal Large Language Models (MLLMs) over image sequences. 
+            It includes 4,761 image sequences of varying lengths. The image sequences in Mementos are categorized into three domains: Daily-life, Robotics, and Comics. 
+            This diverse collection is crucial for evaluating the comprehensive time-varying reasoning abilities of MLLMs. 
+            Specifically, the robotics data, closely associated with embodied AI or real-world contexts, and the comic-style storyboard data, rich in stylistic and episodic diversity, significantly enhance the benchmark’s relevance and robustness.
+          </p>
+
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="box m-5">
+              <div class="content has-text-centered">
+                <img src="static/images/demo.png" alt="algebraic reasoning" height="50%"/>
+                <p> Examples of hallucinations by GPT-4V in three domains on <img src="static/images/film_frames.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
+            <span>Mementos</span>: Daily-life, Robotics, and Comics.</p>
+              </div>
+            </div>
+            <div class="box m-5">
+              <div class="content has-text-centered">
+                <img src="static/images/main_results_tab.png" alt="arithmetic reasoning" height="50%"/>
+                <p> Detailed evaluation results of different MLLMs on different domains of <img src="static/images/film_frames.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
+            <span>Mementos</span>.</p>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <!-- <div class="column is-full-width has-text-centered"> -->
+        <div class="column is-four-fifths">
+        <h2 class="title is-3">Dataset Statistics</h2>
+        <div class="content has-text-justified">
+            <p>
+            All the data are divided into training and validation sets. 
+            <ul>
+              <li><b>training</b>: 4,062 image sequences used for MLLM training or finetuning.</li>
+              <li><b>validation</b>: 699 image sequences for evaluation.</li>
+            </ul>
+            You can download the dataset on <a href="https://drive.google.com/drive/folders/1CKBWtHKzJgkGJb3Qdl2e_HHhc0fThW61" target="_blank">Dataset</a>.
+          </p>
+<!--           <div class="content has-text-centered">
+                <img src="static/images/data_detail_tab.png" alt="algebraic reasoning" height="1%"/>
+    
+                <img src="static/images/Image_length.png" alt="algebraic reasoning" height="10%"/>
+                <img src="static/images/Episode_length.png" alt="algebraic reasoning" height="10%"/>
+          </div> -->
+           <div id="results-carousel" class="carousel results-carousel">
+            <div class="box m-5">
+              <div class="content has-text-centered">
+                <img src="static/images/data_detail_tab.png" width="400" height="200"/>
+                <p> Detailed image sequence numbers in each domain of <a href="https://drive.google.com/drive/folders/1CKBWtHKzJgkGJb3Qdl2e_HHhc0fThW61" target="_blank">Dataset</a>.</p>
+              </div>
+            </div>
+            <div class="box m-5">
+              <div class="content has-text-centered">
+                <img src="static/images/Image_length.png" width="400" height="200"/>
+                <p> Distribution of image sequence length in <img src="static/images/film_frames.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
+            <span>Mementos</span> Val set .</p>
+              </div>
+            </div>
+             <div class="box m-5">
+              <div class="content has-text-centered">
+                <img src="static/images/Episode_length.png" width="400" height="200"/>
+                <p> Distribution of episode length in <img src="static/images/film_frames.png" style="width:1.0em;vertical-align: middle" alt="Logo"/><span>Mementos</span> Val set.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <!-- <div class="column is-full-width has-text-centered"> -->
+        <div class="column is-four-fifths">
+        <h2 class="title is-3">GPT-4-assisted Evaluation</h2>
+        <div class="content has-text-justified">
+            <p>
+We employ a GPT-4-assisted evaluation procedure: after an MLLM produces a description for an image sequence, 
+we extract behavior and object keywords from both AI-generated and human-annotated descriptions using GPT-4, then use keyword matching to assess the degree of behavioral and object hallucinations. 
+            </p>
+          <div class="content has-text-centered">
+                <img src="static/images/procedure.png" width="600" height="600"/>
+          </div> 
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <!-- <div class="column is-full-width has-text-centered"> -->
+        <div class="column is-four-fifths">
+        <h2 class="title is-3">Evaluation Results on Existing MLLMs</h2>
+        <div class="content has-text-justified">
+            <p>
+            GPT-4V with s-input demonstrates the best reasoning capability compared with all other MLLMs in understanding image sequences. Among open-source models, LLaVA1.5 performs the best, nearly matching or even surpassing the black-box model Gemini in object comprehension, but its ability to infer behaviors from image sequences is weaker compared to Gemini and GPT-4V.
+          </p>
+          <div class="content has-text-centered">
+                <img src="static/images/total_v2.png" width="600" height="600"/>
+          </div> 
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">Citation</h2>
+      <p>If you find our work useful, please consider citing the paper as follows:</p>
+      <pre><code>
+@misc{wang2024mementos,
+      title={Mementos: A Comprehensive Benchmark for Multimodal Large Language Model Reasoning over Image Sequences}, 
+      author={Xiyao Wang and Yuhang Zhou and Xiaoyu Liu and Hongjin Lu and Yuancheng Xu and Feihong He and Jaehong Yoon and Taixi Lu and Gedas Bertasius and Mohit Bansal and Huaxiu Yao and Furong Huang},
+      year={2024},
+      eprint={2401.10529},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+      }</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
 </footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
