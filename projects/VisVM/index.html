@@ -58,7 +58,7 @@
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-              <a href="https://si0wang.github.io/">Xiyao Wang</a><sup>1</sup>,</span>
+              <a href="https://si0wang.github.io/">Xiyao Wang</a><sup>1, 2</sup>,</span>
               <span class="author-block">
               <a href="https://zyang-ur.github.io/">Zhengyuan Yang</a><sup>2</sup>,</span>
               <span class="author-block">
@@ -176,11 +176,16 @@ for developing self-improving VLMs.
       <div class="column is-full has-text-centered content">
         <h2 class="title is-3" id="Vision Value Model">Vision Value Model</h2>
         <div class="content">
-          <p class="mt-3"> .
-          </p>
+          <p class="mt-3"> Vision Value Model (VisVM) is a value network which can provide reward signal to guide VLM inference-time
+search by generating descriptive captions in a step-by-step manner. 
+The core innovation lies in breaking down diverse responses from VLM into sentence pairs and using CLIP as the reward signal to train VisVM through Temporal Difference learning.
+This enables VisVM to predict the impact of current sentences on future generations, 
+allowing it to avoid response candidates during inference time
+with higher hallucination risks and generate image descriptions that are less prone to hallucination and more detailed.
+	  </p>
 		<div class="content has-text-centered">
                 <img src="static/images/figure1.png" width="1000" height="600"/>
-          </div> figure
+          </div> An illustration of how VisVM can better guide vision language model (VLM) during inference-time search. 
         </div>
   
       </div>
