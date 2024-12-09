@@ -212,14 +212,15 @@ with higher hallucination risks and generate image descriptions that are less pr
     <div class="columns is-centered has-text-centered">
       <!-- <div class="column is-full-width has-text-centered"> -->
         <div class="column is-four-fifths">
-        <h2 class="title is-3">GPT-4-assisted Evaluation</h2>
+        <h2 class="title is-3">Inference-time Search using VisVM</h2>
         <div class="content has-text-justified">
-            <p>
-We employ a GPT-4-assisted evaluation procedure: after an MLLM produces a description for an image sequence, 
-we extract behavior and object keywords from both AI-generated and human-annotated descriptions using GPT-4, then use keyword matching to assess the degree of behavioral and object hallucinations. 
+            <p>We use VisVM as the signal to guide the
+VLM inference-time search for generating higher-quality
+responses. At each searching step we sample several sentence candidates and evaluate the value using VisVM. The candidate with the highest value is selected as the
+response for the current step. This process continues iteratively until the complete response sequence is generated.
             </p>
           <div class="content has-text-centered">
-                <img src="static/images/procedure.png" width="600" height="600"/>
+                <img src="static/images/search.png" width="500" height="600"/>
           </div> 
         </div>
         </div>
