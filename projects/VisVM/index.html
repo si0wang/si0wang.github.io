@@ -175,8 +175,8 @@ for developing self-improving VLMs.
     <div class="columns is-centered">
       <div class="column is-full has-text-centered content">
         <h2 class="title is-3" id="Vision Value Model">Vision Value Model</h2>
-        <div class="content">
-          <p class="mt-3"> Vision Value Model (VisVM) is a value network which can provide reward signal to guide VLM inference-time
+        <div class="content has-text-justified">
+          <p > Vision Value Model (VisVM) is a value network which can provide reward signal to guide VLM inference-time
 search by generating descriptive captions in a step-by-step manner. 
 The core innovation lies in breaking down diverse responses from VLM into sentence pairs and using CLIP as the reward signal to train VisVM through Temporal Difference learning.
 This enables VisVM to predict the impact of current sentences on future generations, 
@@ -194,101 +194,7 @@ with higher hallucination risks and generate image descriptions that are less pr
   </div>
 </section>
 
-<section class="hero is-light is-small">
-  <div class="hero-body has-text-centered">
-  <h1 class="title is-1">
-    <img src="static/images/film_frames.png" style="width:1em;vertical-align: middle" alt="Logo"/>
-    <span style="vertical-align: middle">Mementos Dataset</span>
-  </h1>
-  </div>
-</section>
-  
-<section class="section">
-  <div class="container">
-    <div class="columns is-centered has-text-centered">
-      <!-- <div class="column is-full-width has-text-centered"> -->
-        <div class="column is-four-fifths">
-        <h2 class="title is-3">Overview</h2>
-        <div class="content has-text-justified">
-          <p>
-            <img src="static/images/film_frames.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
-            <span>Mementos</span> is a comprehensive benchmark designed to evaluate the reasoning capability of Multimodal Large Language Models (MLLMs) over image sequences. 
-            It includes 4,761 image sequences of varying lengths. The image sequences in Mementos are categorized into three domains: Daily-life, Robotics, and Comics. 
-            This diverse collection is crucial for evaluating the comprehensive time-varying reasoning abilities of MLLMs. 
-            Specifically, the robotics data, closely associated with embodied AI or real-world contexts, and the comic-style storyboard data, rich in stylistic and episodic diversity, significantly enhance the benchmark’s relevance and robustness.
-          </p>
 
-          <div id="results-carousel" class="carousel results-carousel">
-            <div class="box m-5">
-              <div class="content has-text-centered">
-                <img src="static/images/demo.png" alt="algebraic reasoning" height="50%"/>
-                <p> Examples of hallucinations by GPT-4V in three domains on <img src="static/images/film_frames.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
-            <span>Mementos</span>: Daily-life, Robotics, and Comics.</p>
-              </div>
-            </div>
-            <div class="box m-5">
-              <div class="content has-text-centered">
-                <img src="static/images/main_results_tab.png" alt="arithmetic reasoning" height="50%"/>
-                <p> Detailed evaluation results of different MLLMs on different domains of <img src="static/images/film_frames.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
-            <span>Mementos</span>.</p>
-              </div>
-            </div>
-          </div>
-          
-        </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-<section class="section">
-  <div class="container">
-    <div class="columns is-centered has-text-centered">
-      <!-- <div class="column is-full-width has-text-centered"> -->
-        <div class="column is-four-fifths">
-        <h2 class="title is-3">Dataset Statistics</h2>
-        <div class="content has-text-justified">
-            <p>
-            All the data are divided into training and validation sets. 
-            <ul>
-              <li><b>training</b>: 4,062 image sequences used for MLLM training or finetuning.</li>
-              <li><b>validation</b>: 699 image sequences for evaluation.</li>
-            </ul>
-            You can download the dataset on <a href="https://drive.google.com/drive/folders/1CKBWtHKzJgkGJb3Qdl2e_HHhc0fThW61" target="_blank">Dataset</a>.
-          </p>
-<!--           <div class="content has-text-centered">
-                <img src="static/images/data_detail_tab.png" alt="algebraic reasoning" height="1%"/>
-    
-                <img src="static/images/Image_length.png" alt="algebraic reasoning" height="10%"/>
-                <img src="static/images/Episode_length.png" alt="algebraic reasoning" height="10%"/>
-          </div> -->
-           <div id="results-carousel" class="carousel results-carousel">
-            <div class="box m-5">
-              <div class="content has-text-centered">
-                <img src="static/images/data_detail_tab.png" width="400" height="200"/>
-                <p> Detailed image sequence numbers in each domain of <a href="https://drive.google.com/drive/folders/1CKBWtHKzJgkGJb3Qdl2e_HHhc0fThW61" target="_blank">Dataset</a>.</p>
-              </div>
-            </div>
-            <div class="box m-5">
-              <div class="content has-text-centered">
-                <img src="static/images/Image_length.png" width="400" height="200"/>
-                <p> Distribution of image sequence length in <img src="static/images/film_frames.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
-            <span>Mementos</span> Val set .</p>
-              </div>
-            </div>
-             <div class="box m-5">
-              <div class="content has-text-centered">
-                <img src="static/images/Episode_length.png" width="400" height="200"/>
-                <p> Distribution of episode length in <img src="static/images/film_frames.png" style="width:1.0em;vertical-align: middle" alt="Logo"/><span>Mementos</span> Val set.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <section class="section">
   <div class="container">
