@@ -287,20 +287,18 @@ search by generating descriptive captions in a step-by-step manner.
           </div> 
 	<div class="content has-text-justified">
 	<p>
-		The core innovation lies in breaking down diverse responses from VLM into sentence pairs and using CLIP as the reward signal to train VisVM through <b>Temporal Difference learning</b>.
+	We use LLAVA-next-7B as the base model, leveraging VisVM as a reward signal to generate high-quality image descriptions as SFT data and train LLaVA-Next-7B. 
+	Across nine comprehension and hallucination benchmarks, VisVM-guided self-training boosted LLAVA-next-7B's performance by an average of 10.8%. 
+	This demonstrates the potential of applying this method for a genuine self-training pipeline that continuously enhances visual comprehension.
 	</p>
 	  </div>  
 	      <div class="content has-text-centered">
-                <img src="static/images/TD learning.png" width="600" height="75"/>
+                <img src="static/images/sfttable.png" width="1000" height="400"/>
           </div>
-	<div class="content has-text-justified">
-	<p>
-This enables VisVM to predict the impact of current sentences on future generations, 
-allowing it to avoid response candidates during inference time
-with higher hallucination risks and generate image descriptions that are less prone to hallucination and more detailed.
-	</p>
-  
-      </div>
+	</div>  
+	      <div class="content has-text-centered">
+                <img src="static/images/sftfig.png" width="600" height="600"/>
+          </div>
     </div>
   
   </div>
