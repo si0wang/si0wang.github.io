@@ -1,0 +1,143 @@
+
+<head>
+	<title>COPlanner</title>
+	<meta property="og:title" content="COPlanner">
+	<meta property="og:description" content="COPlanner: Plan to Roll Out Conservatively but to Explore Optimistically for Model-Based RL">
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script type="text/javascript">
+		function toggle(id) {
+			var e = document.getElementById(id);
+			if(e.style.display == 'block')
+				e.style.display = 'none';
+			else
+				e.style.display = 'block';
+		}
+	</script>
+</head>
+<!-- <head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>COPlanner: Plan to Roll Out Conservatively but to Explore Optimistically for Model-Based RL</title>
+<meta name="description" content="Abstract">
+<link rel="stylesheet" href="asset/css/drm.css">
+<link rel="canonical" href="https://si0wang.github.io/">
+<link rel="shortcut icon" href="asset/favicon.jpg"> 
+</head> -->
+<div class="header" id="top">
+	<div style="padding-bottom: 32px; text-align: center;">
+		<a href="https://si0wang.github.io/"><i class="fa fa-home"></i>&ensp;More research</a>
+	</div>
+	<h1><span class="bold">COPlanner: Plan to Roll Out Conservatively<br/> but to Explore Optimistically for Model-Based RL</h1>
+	<table class="authors">
+		<tbody>
+			<tr>
+				<td>
+					<h4>
+						<a href="https://si0wang.github.io/" class="nobreak">Xiyao Wang</a><sup>1</sup>,&ensp;
+						<a href="https://ruijiezheng.com/" class="nobreak">Ruijie Zhang</a><sup>1</sup>,&ensp;
+						<a href="https://ycsun2017.github.io/" class="nobreak">Yanchao Sun</a><sup>2</sup>,&ensp;
+            <a href="https://jiaruonan.github.io/" class="nobreak">Ruonan Jia</a><sup>3</sup>,&ensp;
+            <a href="https://wwongkamjan.github.io/" class="nobreak">Wichayaporn Wongkamjan</a><sup>1</sup>,&ensp;
+            <a href="http://hxu.rocks/" class="nobreak">Huazhe Xu</a><sup>2</sup>,&ensp;
+            <a href="https://furong-huang.com/" class="nobreak">Furong Huang</a><sup>1</sup>,&ensp;
+            <br/>
+						<span class="authors-affiliation"><sup>1</sup> University of Maryland, College Park</span>
+            <span class="authors-affiliation">&ensp;<sup>2</sup> JPMorgan AI Research</span>
+						<span class="authors-affiliation"><sup>3</sup> Tsinghua University</span>
+					</h4>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<div class="links">
+		<a href="https://arxiv.org/abs/2310.07220" class="btn"><i class="fa">&#xf1c1;</i>&ensp;Paper</a><a href="https://github.com/si0wang/COPlanner" class="btn"><i class="fa fa-github"></i>&ensp;Code</a>
+	</div>
+</div>
+<div class="content">
+	<div class="hr"></div>
+	<div class="figure" style="height: 320px; background-image: url(Figures/framework_v3.png);"></div>
+	<div style="margin: auto; margin-top: -24px;">
+		<p>
+		We present <span class="bold red">COPlanner</span>, a powerful planning-driven framework for model-based Reinforcement Learning to mitigate the impact of imperfect world models and boosting policy learning. <span class="bold red">COPlanner</span> is a plug-and-play framework that can be applied to any dyna-style model-based methods.		
+		</p>
+	</div>
+	<div class="hr"></div>
+	<div>
+		<h2>Abstract</h2>
+		<p class="abstract">
+Dyna-style model-based reinforcement learning contains two phases: model rollouts to generate sample for policy learning and real environment exploration using current policy for dynamics model learning. However, due to the complex real-world environment, it is inevitable to learn an imperfect dynamics model with model prediction error, which can further mislead policy learning and result in sub-optimal solutions. In this paper, we propose COPlanner, a planning-driven framework for model-based methods to address the inaccurately learned dynamics model problem with conservative model rollouts and optimistic environment exploration. COPlanner leverages an uncertainty-aware policy-guided model predictive control (UP-MPC) component to plan for multi-step uncertainty estimation. This estimated uncertainty then serves as a penalty during model rollouts and as a bonus during real environment exploration  respectively, to choose actions. Consequently, COPlanner can avoid model uncertain regions through conservative model rollouts,  thereby alleviating the influence of model error. Simultaneously, it explores high-reward model uncertain regions to reduce model error actively through optimistic real environment exploration. COPlanner is a plug-and-play framework that can be applied to any dyna-style model-based methods. Experimental results on a series of proprioceptive and visual continuous control tasks demonstrate that both sample efficiency and asymptotic performance of strong model-based methods are significantly improved combined with COPlanner.		</p>
+	</div>
+	<div class="hr"></div>
+	<div>
+		<h2>Uncertainty-aware Policy-guided MPC (UP-MPC)</h2>
+		<div class="figure-caption">
+			<p>
+We adopt random shooting during action selection before model rollouts and environment interaction. This process involves assessing the future uncertainty induced by each action through multi-step planning. During model rollouts, this uncertainty serves as a penalty to restrict action choices, encouraging the agent to improve policy within model certain regions, thereby avoiding model error. During interaction with the environment, the uncertainty acts as a bonus, motivating the agent to explore model uncertain regions but potentially high in rewards, thereby reducing world model errors.
+			</p>
+		<div class="figure" style="height: 320px; background-image: url(Figures/MPC_v2.png);"></div>
+		</div>
+	<div class="hr"></div>
+	<div>
+		<h2>Comparison with end-to-end world model-based methods</h2>
+		<div class="figure-caption">
+We combine <span class="bold red">COPlanner</span> with <span class="bold red">MBPO</span> and conduct comparisons with other MBPO-style MBRL methods across 12 continuous proprioceptive control tasks in MuJoCo-GYM and DMC environments. <span class="bold red">COPlanner</span> demonstrates a significant improvement in sample efficiency and performance compared to other methods.
+		</div>
+		<div class="figure" style="height: 320px; background-image: url(Figures/exp_propinput_new.png);"></div>
+	</div>
+	<div class="hr"></div>
+	<div>
+		<h2>Comparison with latent world model-based methods</h2>
+		<div class="figure-caption">
+We also combine our method with the state-of-the-art latent world model-based RL method, <span class="bold red">DreamerV3</span>, and conduct experimental comparisons. <span class="bold red">COPlanner</span> achieves new state-of-the-art sample efficiency and performance in 8 visual continuous control tasks (top) and 6 proprioceptive continuous control tasks (bottom) on DMC.
+		</div>
+		<div class="figure" style="height: 320px; background-image: url(Figures/exp_dreamerv3_new.png);"></div>
+		<div class="figure" style="height: 320px; background-image: url(Figures/exp_propdreamer.png);"></div>
+	</div>
+	<div class="hr"></div> 
+	<h2>Visualized Comparison with DreamerV3</h2>
+		<div class="figure" style="height: 320px; background-image: url(Figures/COPlanner-MainThread.gif);"></div>
+<!--         <video playsinline="" autoplay="" loop="" preload="" muted="" height: 240px>
+								<source src="Figures/demos.mp4" type="video/mp4"/>
+							</video> -->
+	<div class="hr"></div> 
+ 	<div style="margin: auto; margin-bottom: 64px; text-align: center;">
+		<h2>Paper</h2>
+		<span class="bold">COPlanner: Plan to Roll Out Conservatively but to Explore Optimistically for Model-Based RL</span><br/>
+		<span class="italic">Xiyao Wang, Ruijie Zheng, Yanchao Sun, Ruonan Jia, Wichayaporn Wongkamjan, Huazhe Xu, Furong Huang</span><br/><br/>
+		<a href="https://arxiv.org/abs/2310.07220">ICLR 2024</a><br/><br/>
+		<div class="page" style="background-image: url(Figures/0.png);"></div>
+		<div class="page" style="background-image: url(Figures/1.png);"></div>
+		<div class="page" style="background-image: url(Figures/2.png);"></div>
+		<div class="page" style="background-image: url(Figures/3.png);"></div>
+		<div class="page" style="background-image: url(Figures/4.png);"></div>
+		<div class="page" style="background-image: url(Figures/5.png);"></div>
+		<div class="page" style="background-image: url(Figures/6.png);"></div>
+		<div class="page" style="background-image: url(Figures/7.png);"></div>
+		<div class="page" style="background-image: url(Figures/8.png);"></div>
+		<div style="margin: auto; margin-top: 32px;">
+			<a href="https://arxiv.org/abs/2310.07220">View on arXiv</a>
+		</div>
+	</div>
+	<div class="hr"></div>
+	<div style="padding-bottom: 64px; text-align: center;">
+		<h2>Citation</h2>
+		<p>
+			If you find our work useful, please consider citing the paper as follows:
+		</p>
+		<div id="bibtex-text" class="bibtexsection" onClick="window.getSelection().selectAllChildren(document.getElementById('bibtex-text'));">
+@article{wang2023coplanner,
+  title={COPlanner: Plan to Roll Out Conservatively but to Explore Optimistically for Model-Based RL},
+  author={Wang, Xiyao and Zheng, Ruijie and Sun, Yanchao and Jia, Ruonan and Wongkamjan, Wichayaporn and Xu, Huazhe and Huang, Furong},
+  booktitle={International Conference on Learning Representations},
+  year={2024}
+}</div>
+	</div>
+</div>
+<footer>
+<a href="#top"><i class="fa fa-arrow-up"></i><br/>Return to top</a>
+<div style="padding-top: 48px;">
+	<span>Website based on <a href="https://nicklashansen.github.io/td-mpc2">TD-MPC2</a> and <a href="https://nerfies.github.io">Nerfies</a>.</span>
+</div>
+</footer>
