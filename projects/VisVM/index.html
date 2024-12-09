@@ -53,7 +53,7 @@
           <div class="column has-text-centered">
             <h1 class="title is-1 publication-title is-bold">
             </h1>
-            <h4 class="title is-3 publication-title">Scaling Inference-Time Search with Vision Value Model 
+            <h4 class="title is-2 publication-title">Scaling Inference-Time Search with Vision Value Model 
 		    for Improved Visual Comprehension</h4>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
@@ -232,8 +232,8 @@ response for the current step. This process continues iteratively until the comp
   
 <section class="section">
   <div class="container">
-<!-- <div class="columns is-centered"> -->
-    <div class="columns is-centered has-text-centered">
+<div class="columns is-centered">
+    <div class="column is-full-width has-text-centered">
         <h2 class="title is-3">VisVM-Guided Search Improves Response Quality</h2>
         <div class="content has-text-justified">
 	<ul>
@@ -255,7 +255,7 @@ response for the current step. This process continues iteratively until the comp
 	<div class="content has-text-centered">
                 <img src="static/images/case1.png" width="1000" height="1000"/>
           </div> 
-		<li><b>Less Hallucination, More Details</b>
+		<li><b>Improved Hallucination Benchmark Performance</b>
             By incorporating VisVM guided search during inference, LLaVA-Next achieves remarkable improvements on the hallucination benchmarks, 
 			significantly outperforming other search/decoding baselines.
 		</li>
@@ -265,11 +265,48 @@ response for the current step. This process continues iteratively until the comp
 	</ul>
         </div>
 <!--         </div> -->
-<!--       </div> -->
+      </div>
     </div>
 </div>
   </section>
 
+
+<section class="section">
+  <div class="container">
+    
+    <div class="columns is-centered">
+      <div class="column is-full-width has-text-centered">
+        <h2 class="title is-3">VisVM for Self-Training Vision-Language Model</h2>
+        <div class="content has-text-justified">
+          <p > <b>Vis</b>ion <b>V</b>alue <b>M</b>odel (VisVM) is a value network which can provide reward signal to guide VLM inference-time
+search by generating descriptive captions in a step-by-step manner. 
+	  </p>
+		</div>
+		<div class="content has-text-centered">
+                <img src="static/images/figure1.png" width="1000" height="600"/>
+          </div> 
+	<div class="content has-text-justified">
+	<p>
+		The core innovation lies in breaking down diverse responses from VLM into sentence pairs and using CLIP as the reward signal to train VisVM through <b>Temporal Difference learning</b>.
+	</p>
+	  </div>  
+	      <div class="content has-text-centered">
+                <img src="static/images/TD learning.png" width="600" height="75"/>
+          </div>
+	<div class="content has-text-justified">
+	<p>
+This enables VisVM to predict the impact of current sentences on future generations, 
+allowing it to avoid response candidates during inference time
+with higher hallucination risks and generate image descriptions that are less prone to hallucination and more detailed.
+	</p>
+  
+      </div>
+    </div>
+  
+  </div>
+	  </div>
+</section>
+	
 <!--BibTex citation -->
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
